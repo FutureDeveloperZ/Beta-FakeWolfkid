@@ -45,9 +45,9 @@ client.on('message', async message => {
       .setTitle('BotInfo')
       .setDescription('Here is were you can find About the Bot Info!')
       .addField('Version', 'FWK-1.2 Unstable')
-      .setImage(bot.user.avatarURL)
-      .addField('Bot Created', bot.user.createdAt)
-	     .addField('Bot Username', bot.user.username)
+      .setImage(client.user.avatarURL)
+      .addField('Bot Created', client.user.createdAt)
+	     .addField('Bot Username', client.user.username)
       return message.channel.send(botinfoembed);
     }
     
