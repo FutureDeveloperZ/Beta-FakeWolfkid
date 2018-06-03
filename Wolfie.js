@@ -39,19 +39,18 @@ client.on('message', async message => {
       .setColor('RANDOM')
       return message.channel.send(mediaembed);
     }
-
+    
     if (message.content === prefix + 'botinfo') {
-
       let botinfoembed = new Discord.RichEmbed()
       .setTitle('BotInfo')
       .setDescription('Here is were you can find About the Bot Info!')
       .addField('Version', 'FWK-1.2 Unstable')
       .setImage(bot.user.avatarURL)
       .addField('Bot Created', bot.user.createdAt)
-	      .addField('Bot Username', bot.user.username)
+	     .addField('Bot Username', bot.user.username)
       return message.channel.send(botinfoembed);
     }
-
+    
     if (message.content === prefix + 'changelog') {
       let changelogembed = new Discord.RichEmbed()
       .setTitle('Changelog')
