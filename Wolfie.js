@@ -5,7 +5,7 @@ const config = require('./config.json');
 client.on('ready', () => {
     client.user.setStatus('dnd');
     client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});
-    console.log('BOI I\'m ready!');
+    console.log('Uhhh I\'m ready!');
 });
 
 client.on('message', async message => {
@@ -77,9 +77,23 @@ client.on('message', async message => {
      let avatarembed = new Discord.RichEmbed()
      .setTitle('Avatar!')
      .setColor('RANDOM')
-     .setImage(message.author.avatarURL + "?size=0") 
+     .setImage(message.author.avatarURL) 
      .setFooter(`Requested by ${message.author.tag}`)
      return message.channel.send(avatarembed)
+   }
+
+   if (message.content === prefix + 'serverinfo') {
+     let serverinfoembed = new Discord.RichEmbed()
+     .setTitle('Server Info')
+     .setColor('RANDOM')
+     .setThumbnail(member.user.displayAvatarURL())
+     .addField('Your ID', member.id, true)
+     .addField('Discord Server Created In', member.user.createdAt.toDateString(), true)
+     .addField('You Join at', member.joinedAt.toDateString(), true)
+     .addField('Are you a Bot?', member.user.bot ? 'Yes' : 'No', true)
+     .addField('Are You Nick?', member.nickname || 'None', true)
+     .setFooter(`Requested by ${message.author.tag}`)
+    return message.channel.send(serverinfoembed)
    }
    
 });
