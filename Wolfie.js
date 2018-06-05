@@ -79,7 +79,7 @@ client.on('message', async message => {
      .setColor('RANDOM')
      .setImage(message.author.avatarURL) 
      .setFooter(`Requested by ${message.author.tag}`)
-     return message.channel.send(avatarembed)
+     return message.channel.send(avatarembed);
    }
 
    if (message.content === prefix + 'serverinfo') {
@@ -89,11 +89,11 @@ client.on('message', async message => {
      .setThumbnail(client.user.avatarURL)
      .addField('Your ID', message.author.id, true)
      .addField('Discord Server Created In', message.guild.createdAt.toDateString(), true)
-     .addField('You Join at', message.memberjoinedAt.toDateString(), true)
+     .addField('You Join at', message.member.joinedAt.toDateString(), true)
      .addField('Are you a Bot?', message.member.user.bot ? 'Yes' : 'No', true)
      .addField('Are You Nick?', message.member.nickname || 'None', true)
      .setFooter(`Requested by ${message.author.tag}`)
-    return message.channel.send(serverinfoembed)
+    return message.channel.send(serverinfoembed);
    }
    
 });
