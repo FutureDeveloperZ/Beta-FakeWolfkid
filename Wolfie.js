@@ -16,7 +16,7 @@ client.on('message', async message => {
       let helpembed = new Discord.RichEmbed()
       .setTitle('Simple Comamnds | prefix ! ')
       .setDescription('There is available commands for this bot on list!')
-      .addField('help', 'Bot commands list!')
+      .addField('help', 'Bot commands list! (Theres 1 to 2 pages)')
       .addField('media', 'Check The Bot Creator Website/Media')
       .addField('dcinvite', 'Join our developer team on Discord server!')
       .addField('userinfo', 'Info about the about you or others')
@@ -28,14 +28,19 @@ client.on('message', async message => {
       return message.channel.send(helpembed);
     }
     
+    if (message.content === prefix + 'help2') {
+      let helpe2mbed = new Discord.RichEmbed()
+      .setTitle('Simple Comamnds | prefix ! ')
+      .setDescription('2 Page of Help and Not Added Commands yet!')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help page 2`)
+      return message.channel.send(helpe2mbed);
+    }
+    
     if (message.content === prefix + 'media') {
       let mediaembed = new Discord.RichEmbed()
       .setTitle('Check Wolfie Social Media')
-      .setDescription('Check Wolfie [Youtube Channel ](https://www.youtube.com/c/Wolfkid)')
-      .addField('Twitter', 'https://twitter.com/TheRealWolfkid')
-      .addField('GitHub', 'https://github.com/Wolfkid200444')
-      .addField('Fan Discord Server', 'http://bit.ly/WolfkidDiscord')
-      .addField('Website', 'In Progress')
+      .setDescription('Check Wolfie [Youtube Channel ](https://www.youtube.com/c/Wolfkid).\n Check Wolfie [Twitter](https://twitter.com/TheRealWolfkid).\n Check Wolfie [Fan Discord Server](http://bit.ly/WolfkidDiscord).\nAnd Also Check Wolfie [Github](https://github.com/Wolfkid200444)')
       .setColor('RANDOM')
       return message.channel.send(mediaembed);
     }
@@ -50,7 +55,7 @@ client.on('message', async message => {
       .addField('Bot Username', client.user.username)
       .addField('Host We Use', 'Heroku')
       .addField('Bot Code', 'This Bot used Node.js and d.js Modules')
-      .addField('Contributors + Helpers', 'People that Help me with the bot and code :) :: Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
+      .addField('Contributors + Helpers', 'People that Help me with the bot and co : Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
       return message.channel.send(botinfoembed);
     }
     
@@ -73,18 +78,10 @@ client.on('message', async message => {
       let dcinviteembed = new Discord.RichEmbed()
       .setTitle('Our support Discord server')
       .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')
+      .setColor('DARK')
       return message.channel.send(dcinviteembed);
     }
     
-   if (message.content === prefix + 'avatar') {
-     let avatarembed = new Discord.RichEmbed()
-     .setTitle('Your Avatar!')
-     .setColor('RANDOM')
-     .setImage(message.author.avatarURL) 
-     .setFooter(`Requested by ${message.author.tag}`)
-     return message.channel.send(avatarembed);
-   }
-
    if (message.content === prefix + 'userinfo') {
      let userinfoembed = new Discord.RichEmbed()
      .setTitle('User Info')
@@ -97,6 +94,15 @@ client.on('message', async message => {
      .addField('Are You Nick in the server?', message.member.nickname || 'None', true)
      .setFooter(`Requested by ${message.author.tag}`)
     return message.channel.send(userinfoembed);
+   }
+    //Added This To Seperate Commands and stuff -- This Section is for Fun cmd
+   if (message.content === prefix + 'avatar') {
+     let avatarembed = new Discord.RichEmbed()
+     .setTitle('Your Avatar!')
+     .setColor('RANDOM')
+     .setImage(message.author.avatarURL) 
+     .setFooter(`Requested by ${message.author.tag}`)
+     return message.channel.send(avatarembed);
    }
    
    if (message.content === prefix + 'test') {
