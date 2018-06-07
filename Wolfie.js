@@ -19,10 +19,10 @@ client.on('message', async message => {
       .addField('help', 'Bot commands list!')
       .addField('media', 'Check The Bot Creator Website/Media')
       .addField('dcinvite', 'Join our developer team on Discord server!')
-      .addField('serverinfo', 'Info about the server')
+      .addField('userinfo', 'Info about the about you or others')
       .addField('avatar', 'See your profile picture But Bigger')
       .addField('changelog', 'View the New Updates that have bene made to the Bot!')
-      .addField('botinfo', 'VIEW Bof Information and Versions')
+      .addField('botinfo', 'check Bot Information and Versions')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help page 1`)
       return message.channel.send(helpembed);
@@ -44,10 +44,13 @@ client.on('message', async message => {
       let botinfoembed = new Discord.RichEmbed()
       .setTitle('BotInfo')
       .setDescription('Here is were you can find About the Bot Info!')
-      .addField('Version', 'FWK-1.2 Unstable')
-      .setImage(client.user.avatarURL)
+      .addField('Version', '1.3 Unstable')
+      .setThumbnail(client.user.avatarURL)
       .addField('Bot Created', client.user.createdAt)
-	     .addField('Bot Username', client.user.username)
+      .addField('Bot Username', client.user.username)
+      .addField('Host We Use', 'Heroku')
+      .addField('Bot Code', 'This Bot used Node.js and d.js Modules')
+      .addField('Contributors + Helpers', 'People that Help me with the bot and code :) :: Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
       return message.channel.send(botinfoembed);
     }
     
@@ -82,18 +85,18 @@ client.on('message', async message => {
      return message.channel.send(avatarembed);
    }
 
-   if (message.content === prefix + 'serverinfo') {
-     let serverinfoembed = new Discord.RichEmbed()
-     .setTitle('Server Info')
+   if (message.content === prefix + 'userinfo') {
+     let userinfoembed = new Discord.RichEmbed()
+     .setTitle('User Info')
      .setColor('RANDOM')
      .setThumbnail(client.user.avatarURL)
      .addField('Your ID', message.author.id, true)
      .addField('Discord Server Created In', message.guild.createdAt.toDateString(), true)
      .addField('You Join at', message.member.joinedAt.toDateString(), true)
      .addField('Are you a Bot?', message.member.user.bot ? 'Yes' : 'No', true)
-     .addField('Are You Nick?', message.member.nickname || 'None', true)
+     .addField('Are You Nick in the server?', message.member.nickname || 'None', true)
      .setFooter(`Requested by ${message.author.tag}`)
-    return message.channel.send(serverinfoembed);
+    return message.channel.send(userinfoembed);
    }
    
 });
