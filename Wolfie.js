@@ -30,7 +30,8 @@ client.on('message', async message => {
     
     if (message.content === prefix + 'media') {
       let mediaembed = new Discord.RichEmbed()
-      .setTitle('Check Wolfie Social Media for awsome.Stuff Like is videos or tweets or other stuff <br> <br> [Click for is Youtube](https://www.youtube.com/c/Wolfkid)')
+      .setTitle('Check Wolfie Social Media')
+      .setDescription('Check Wolfie [Youtube Channel ](https://www.youtube.com/c/Wolfkid)')
       .addField('Twitter', 'https://twitter.com/TheRealWolfkid')
       .addField('GitHub', 'https://github.com/Wolfkid200444')
       .addField('Fan Discord Server', 'http://bit.ly/WolfkidDiscord')
