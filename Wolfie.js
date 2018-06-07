@@ -99,7 +99,7 @@ client.on('message', async message => {
     return message.channel.send(userinfoembed);
    }
    
-   if (messsage.content === prefix + 'test') {
+   if (message.content === prefix + 'test') {
      let testembed = new Discord.RichEmbed()
      .setTitle('Test Command')
      .addDescription('Check {TestWebsite}(https://google.com)')
