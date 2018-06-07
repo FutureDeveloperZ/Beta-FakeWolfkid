@@ -99,5 +99,12 @@ client.on('message', async message => {
     return message.channel.send(userinfoembed);
    }
    
-});
-client.login(process.env.BOT_TOKEN);
+   if (messsage.content === prefix + 'test') {
+     let testembed = new Discord.RichEmbed()
+     .setTitle('Test Command')
+     .addDescription('Check {TestWebsite}(https://google.com)')
+     .setFooter(`Requested by ${message.author.tag}`)
+    return message.channel.send(testembed);
+   }
+   
+});client.login(process.env.BOT_TOKEN);
