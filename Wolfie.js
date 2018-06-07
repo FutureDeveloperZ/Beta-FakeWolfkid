@@ -30,8 +30,7 @@ client.on('message', async message => {
     
     if (message.content === prefix + 'media') {
       let mediaembed = new Discord.RichEmbed()
-      .setTitle('This is Wolfie Social Media')
-      .addField('YouTube', 'https://www.youtube.com/c/Wolfkid')
+      .setTitle('Check Wolfie Social Media for awsome.Stuff Like is videos or tweets or other stuff <br> <br> [Click for is Youtube](https://www.youtube.com/c/Wolfkid)')
       .addField('Twitter', 'https://twitter.com/TheRealWolfkid')
       .addField('GitHub', 'https://github.com/Wolfkid200444')
       .addField('Fan Discord Server', 'http://bit.ly/WolfkidDiscord')
@@ -63,6 +62,7 @@ client.on('message', async message => {
       .addField('May 18 2018 News', 'Added Help Command And Few Commands Working again')
       .addField('May 27 2018 News', 'Added Footers to #ffffffffCommands and Avatar Command')
       .addField('May 30 2018 News', 'Remove Lewd Command as i bring alot of problems plus Adding Commands')
+      .addField('June 7 2018 News', 'Added Some awsome commands(do f; or b; for help) and Fix Descriptions')
       .setColor('#808000')
       .setFooter(`Requested by ${message.author.tag}`)
       return message.channel.send(changelogembed);
@@ -70,9 +70,8 @@ client.on('message', async message => {
     
     if (message.content === prefix + 'dcinvite') {
       let dcinviteembed = new Discord.RichEmbed()
-      .setTitle('Click Here to Our Discord Invite')
-      .setURL('http://bit.ly/FutureDevs')
-      .setDescription('Check out our Discord server to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')
+      .setTitle('Our support Discord server')
+      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')
       return message.channel.send(dcinviteembed);
     }
     
