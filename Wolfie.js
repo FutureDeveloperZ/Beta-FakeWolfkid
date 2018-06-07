@@ -102,7 +102,7 @@ client.on('message', async message => {
    if (message.content === prefix + 'test') {
      let testembed = new Discord.RichEmbed()
      .setTitle('Test Command')
-     .setDescription('Check {TestWebsite}(https://google.com)')
+     .setDescription('Check [TestWebsite](https://google.com)')
      .setFooter(`Requested by ${message.author.tag}`)
     return message.channel.send(testembed);
    }
