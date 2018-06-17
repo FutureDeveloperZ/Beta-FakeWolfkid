@@ -14,7 +14,7 @@ client.on('message', async message => {
 
     if (message.content === prefix + 'help') {
       let helpembed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix ! ')
+      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
       .setDescription('There is available commands for this bot on list!')
       .addField('help', 'Bot commands list! (Theres 1 to 2 pages)')
       .addField('media', 'Check The Bot Creator Website/Media')
@@ -30,8 +30,9 @@ client.on('message', async message => {
     
     if (message.content === prefix + 'help2') {
       let helpe2mbed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix ! ')
-      .setDescription('2 Page of Help and Not Added Commands yet!')
+      .setTitle('Simple Comamnds | prefix b; | Page 2 ')
+      .setDescription('2 Page of Help')
+      .addField('Host', 'Check out our new Host')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help page 2`)
       return message.channel.send(helpe2mbed);
@@ -49,7 +50,7 @@ client.on('message', async message => {
       let botinfoembed = new Discord.RichEmbed()
       .setTitle('BotInfo')
       .setDescription('Here is were you can find About the Bot Info!')
-      .addField('Version', '1.3 Unstable')
+      .addField('Version', '1.5 Unstable')
       .setThumbnail(client.user.avatarURL)
       .addField('Bot Created', client.user.createdAt)
       .addField('Bot Username', client.user.username)
@@ -69,6 +70,7 @@ client.on('message', async message => {
       .addField('May 27 2018 News', 'Added Footers to #ffffffffCommands and Avatar Command')
       .addField('May 30 2018 News', 'Remove Lewd Command as i bring alot of problems plus Adding Commands')
       .addField('June 7 2018 News', 'Added Some awsome commands(do f; or b; for help) and Fix Descriptions')
+      .addField('June 17 2018 News', 'Added New Command + Awsome Feature')
       .setColor('#808000')
       .setFooter(`Requested by ${message.author.tag}`)
       return message.channel.send(changelogembed);
@@ -84,18 +86,27 @@ client.on('message', async message => {
     
    if (message.content === prefix + 'userinfo') {
      let userinfoembed = new Discord.RichEmbed()
-     .setTitle('User Info')
+     .setTitle(`${message.author.tag} User Info`)
      .setColor('RANDOM')
      .setThumbnail(client.user.avatarURL)
      .addField('Your ID', message.author.id, true)
-     .addField('Discord Server Created In', message.guild.createdAt.toDateString(), true)
      .addField('You Join at', message.member.joinedAt.toDateString(), true)
      .addField('Are you a Bot?', message.member.user.bot ? 'Yes' : 'No', true)
-     .addField('Are You Nick in the server?', message.member.nickname || 'None', true)
      .setFooter(`Requested by ${message.author.tag}`)
     return message.channel.send(userinfoembed);
    }
+   
+   if (message.content === prefix + 'host') {
+      let hostembed = new Discord.RichEmbed()
+      .setTitle('Check Our New Host')
+      .setDescription('Click This [Link](https://discord.gg/r9fYKEA) to Join our new Host and Host your Own Bot!!')
+      .setColor('WHITE')
+      .setFooter(`${message.author.tag}`)
+     return message.channel.send(hostembed);
+     }
+     
     //Added This To Seperate Commands and stuff -- This Section is for Fun cmd
+    
    if (message.content === prefix + 'avatar') {
      let avatarembed = new Discord.RichEmbed()
      .setTitle('Your Avatar!')
@@ -105,12 +116,41 @@ client.on('message', async message => {
      return message.channel.send(avatarembed);
    }
    
-   if (message.content === prefix + 'test') {
-     let testembed = new Discord.RichEmbed()
-     .setTitle('Test Command')
-     .setDescription('Check [TestWebsite](https://google.com)')
-     .setFooter(`Requested by ${message.author.tag}`)
-    return message.channel.send(testembed);
-   }
+   case "hug" : {
+			if (message.mentions.members.size == 0) {
+				message.channel.send("You have to mention the user you want to hug!");
+				break;		
+			}
+
+			var images = [
+				"https://media.giphy.com/media/BXrwTdoho6hkQ/giphy.gif",
+				"https://media.giphy.com/media/qscdhWs5o3yb6/giphy.gif",
+				"https://media.giphy.com/media/xZshtXrSgsRHy/giphy.gif",
+				"https://media.giphy.com/media/svXXBgduBsJ1u/giphy.gif",
+                "https://media.giphy.com/media/143v0Z4767T15e/giphy.gif",
+                "https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif",
+				"https://i.imgur.com/KWCgD5x.gif",
+				"https://lh3.googleusercontent.com/-oWQTWYfhlEI/VWRQDOAIYCI/AAAAAAAABWc/Qr-Xc6G8Nuo/w800-h800/tumblr_m68m3wjllW1qewqw2.gif",
+				"https://i.imgur.com/6koVXbP.gif",
+				"https://pa1.narvii.com/6717/9c8654d42e2d13eca2ec5ce8f9052e8350c997fa_00.gif",
+                "https://media1.tenor.com/images/d0c2e7382742f1faf8fcb44db268615f/tenor.gif",
+                "https://vignette.wikia.nocookie.net/r2d/images/4/40/9cd13826.gif/revision/latest?cb=20141229175738", 
+                "https://thumbs.gfycat.com/WellgroomedVapidKitten-max-1mb.gif",
+				"https://cdn.discordapp.com/attachments/396609929504489473/432552500361691156/tenor.png",
+				"https://tenor.com/view/hug-anime-love-dragon-loli-gif-9920978",
+				"https://tenor.com/view/mika-mikaela-hyakuya-owari-no-gif-7419864"
+			];
+
+			message.mentions.members.forEach((member, memberId) => {
+				message.channel.send(new Discord.RichEmbed({
+					description: `**${message.member.displayName}** hugs **${member.displayName}**!`,
+					image: {
+						url: images[Math.floor(Math.random() * images.length)]
+					}
+				}));
+			});
+
+			break;
+		}
    
 });client.login(process.env.BOT_TOKEN);
