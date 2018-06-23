@@ -12,12 +12,13 @@ client.on('message', async message => {
     if (message.author.bot) return;
     let prefix = config.prefix;
 
-    if (message.content === prefix + 'help') {
+
+    if (message.content === prefix + 'help') {
       let helpembed = new Discord.RichEmbed()
       .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
       .addField(':newspaper: INFO', '7 Commands open \n``help info``')
-      .addField(':tada: FUN', '1 Commands open \n``help fun``)
+      .addField(':tada: FUN', '1 Commands open \n``help fun``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
