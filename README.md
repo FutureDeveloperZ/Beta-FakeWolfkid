@@ -1,6 +1,5 @@
 # WolfkidFakeBot
-This is a simple bot that I stole code from another bot, don't judge me xD
-This bot is still in beta.
+Awsome Bot That Have Some Awsome Features that will amaze you
 
 ## To Do List
 - [x] Get Developers (To Help me)
