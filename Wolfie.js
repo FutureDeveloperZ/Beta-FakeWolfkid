@@ -12,7 +12,8 @@ client.on('message', async message => {
     if (message.author.bot) return;
     let prefix = config.prefix;
 
-    if (message.content === prefix + 'help') {
+
+    if (message.content === prefix + 'help') {
       let helpembed = new Discord.RichEmbed()
       .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
@@ -64,7 +65,7 @@ client.on('message', async message => {
       .addField('Contributors + Helpers', 'People that Help me with the bot and contributors : Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
       return message.channel.send(botinfoembed);
     }
-    
+   
     if (message.content === prefix + 'changelog') {
       let changelogembed = new Discord.RichEmbed()
       .setTitle('Changelog')
