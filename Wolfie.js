@@ -14,30 +14,30 @@ client.on('message', async message => {
 
     if (message.content === prefix + 'help') {
       let helpembed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
+      .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
-      .addField('INFO', '7 Commands open \n``help info``')
-      .addField('FUN', '1 Commands open \n``help fun``')
+      .addField(':newspaper: INFO', '7 Commands open \n``help info``')
+      .addField(':tada: FUN', '1 Commands open \n``help fun``')
       .setColor('RANDOM')
-      .setFooter(`Requested by ${message.author.tag} | Help page 1`)
+      .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
     }
   
     if (message.content === prefix + 'help info') {
       let helpeinfombed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
+      .setTitle('Info commands | prefix b; | Info page ')
       .setDescription('There is available commands for this Info \n``botinfo, changelog, dcinvite, media, userinfo, host``')
       .setColor('RANDOM')
-      .setFooter(`Requested by ${message.author.tag} | Help page 1`)
+      .setFooter(`Requested by ${message.author.tag} | Help info`)
       return message.channel.send(helpeinfombed);
     }
       
     if (message.content === prefix + 'help fun') {
       let helpfunembed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
+      .setTitle('Fun Comamnds | prefix b; | Fun list')
       .setDescription('There is available commands for FUN!\n ``avatar,``')
       .setColor('RANDOM')
-      .setFooter(`Requested by ${message.author.tag} | Help page 1`)
+      .setFooter(`Requested by ${message.author.tag} | Help fun`)
       return message.channel.send(helpfunembed);
     }
     
@@ -59,8 +59,9 @@ client.on('message', async message => {
       .addField('Bot Username', client.user.username)
       .addField('Host We Use', 'Heroku')
       .addField('Bot Code', 'JavaScript')
-      .addField('Librarys', 'Node.js , discord.js')
-      .addField('Contributors + Helpers', 'People that Help me with the bot and co : Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
+      .addField('Librarys', ' discord.js')
+      .addField('Modules', 'Node.js')
+      .addField('Contributors + Helpers', 'People that Help me with the bot and contributors : Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
       return message.channel.send(botinfoembed);
     }
     
