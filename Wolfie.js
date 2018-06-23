@@ -12,30 +12,33 @@ client.on('message', async message => {
     if (message.author.bot) return;
     let prefix = config.prefix;
 
-    if (message.content === prefix + 'help') {
+    if (message.content === prefix + 'help') {
       let helpembed = new Discord.RichEmbed()
       .setTitle('Simple Comamnds | prefix b; | Page 1 ')
       .setDescription('There is available commands for this bot on list!')
-      .addField('help', 'Bot commands list! (Theres 1 to 2 pages)')
-      .addField('media', 'Check The Bot Creator Website/Media')
-      .addField('dcinvite', 'Join our developer team on Discord server!')
-      .addField('userinfo', 'Info about the about you or others')
-      .addField('avatar', 'See your profile picture But Bigger')
-      .addField('changelog', 'View the New Updates that have bene made to the Bot!')
-      .addField('botinfo', 'check Bot Information and Versions')
+      .addField('INFO', '7 Commands open \n``help info``')
+      .addField('FUN', '1 Commands open \n``help fun``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help page 1`)
       return message.channel.send(helpembed);
     }
-    
-    if (message.content === prefix + 'help2') {
-      let helpe2mbed = new Discord.RichEmbed()
-      .setTitle('Simple Comamnds | prefix b; | Page 2 ')
-      .setDescription('2 Page of Help')
-      .addField('Host', 'Check out our new Host')
+  
+    if (message.content === prefix + 'help info') {
+      let helpeinfombed = new Discord.RichEmbed()
+      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
+      .setDescription('There is available commands for this Info \n``botinfo, changelog, dcinvite, media, userinfo, host``')
       .setColor('RANDOM')
-      .setFooter(`Requested by ${message.author.tag} | Help page 2`)
-      return message.channel.send(helpe2mbed);
+      .setFooter(`Requested by ${message.author.tag} | Help page 1`)
+      return message.channel.send(helpeinfombed);
+    }
+      
+    if (message.content === prefix + 'help fun') {
+      let helpfunembed = new Discord.RichEmbed()
+      .setTitle('Simple Comamnds | prefix b; | Page 1 ')
+      .setDescription('There is available commands for FUN!\n ``avatar,``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help page 1`)
+      return message.channel.send(helpfunembed);
     }
     
     if (message.content === prefix + 'media') {
@@ -50,12 +53,13 @@ client.on('message', async message => {
       let botinfoembed = new Discord.RichEmbed()
       .setTitle('BotInfo')
       .setDescription('Here is were you can find About the Bot Info!')
-      .addField('Version', '1.5 Unstable')
+      .addField('Version', '1.6 Unstable')
       .setThumbnail(client.user.avatarURL)
       .addField('Bot Created', client.user.createdAt)
       .addField('Bot Username', client.user.username)
       .addField('Host We Use', 'Heroku')
-      .addField('Bot Code', 'This Bot used Node.js and d.js Modules')
+      .addField('Bot Code', 'JavaScript')
+      .addField('Librarys', 'Node.js , discord.js')
       .addField('Contributors + Helpers', 'People that Help me with the bot and co : Cheitroid#2928, Zyphen#8624, shadowolf#9212, PokemonLeader#1712')
       return message.channel.send(botinfoembed);
     }
@@ -71,6 +75,7 @@ client.on('message', async message => {
       .addField('May 30 2018 News', 'Remove Lewd Command as i bring alot of problems plus Adding Commands')
       .addField('June 7 2018 News', 'Added Some awsome commands(do f; or b; for help) and Fix Descriptions')
       .addField('June 17 2018 News', 'Added New Command + Awsome Feature')
+      .addField('June 23 2018 News', 'Fletch Out the Help Menu')
       .setColor('#808000')
       .setFooter(`Requested by ${message.author.tag}`)
       return message.channel.send(changelogembed);
@@ -115,42 +120,6 @@ client.on('message', async message => {
      .setFooter(`Requested by ${message.author.tag}`)
      return message.channel.send(avatarembed);
    }
-   
-   case "hug" : {
-			if (message.mentions.members.size == 0) {
-				message.channel.send("You have to mention the user you want to hug!");
-				break;		
-			}
-
-			var images = [
-				"https://media.giphy.com/media/BXrwTdoho6hkQ/giphy.gif",
-				"https://media.giphy.com/media/qscdhWs5o3yb6/giphy.gif",
-				"https://media.giphy.com/media/xZshtXrSgsRHy/giphy.gif",
-				"https://media.giphy.com/media/svXXBgduBsJ1u/giphy.gif",
-                "https://media.giphy.com/media/143v0Z4767T15e/giphy.gif",
-                "https://media.giphy.com/media/od5H3PmEG5EVq/giphy.gif",
-				"https://i.imgur.com/KWCgD5x.gif",
-				"https://lh3.googleusercontent.com/-oWQTWYfhlEI/VWRQDOAIYCI/AAAAAAAABWc/Qr-Xc6G8Nuo/w800-h800/tumblr_m68m3wjllW1qewqw2.gif",
-				"https://i.imgur.com/6koVXbP.gif",
-				"https://pa1.narvii.com/6717/9c8654d42e2d13eca2ec5ce8f9052e8350c997fa_00.gif",
-                "https://media1.tenor.com/images/d0c2e7382742f1faf8fcb44db268615f/tenor.gif",
-                "https://vignette.wikia.nocookie.net/r2d/images/4/40/9cd13826.gif/revision/latest?cb=20141229175738", 
-                "https://thumbs.gfycat.com/WellgroomedVapidKitten-max-1mb.gif",
-				"https://cdn.discordapp.com/attachments/396609929504489473/432552500361691156/tenor.png",
-				"https://tenor.com/view/hug-anime-love-dragon-loli-gif-9920978",
-				"https://tenor.com/view/mika-mikaela-hyakuya-owari-no-gif-7419864"
-			];
-
-			message.mentions.members.forEach((member, memberId) => {
-				message.channel.send(new Discord.RichEmbed({
-					description: `**${message.member.displayName}** hugs **${member.displayName}**!`,
-					image: {
-						url: images[Math.floor(Math.random() * images.length)]
-					}
-				}));
-			});
-
-			break;
-		}
-   
-});client.login(process.env.BOT_TOKEN);
+  
+});
+client.login(process.env.BOT_TOKEN);
