@@ -12,7 +12,7 @@ Awsome Bot That Have Some Awsome Features that will amaze you
 - [X] Make Embed Commands
 - [ ]  Make it Public
 - [X] Out pass my Friends Bots
-tell us your ideas 
+> Tell us your ideas 
 
 ## Social Media
 Want to Help me to Code with me? <br>
