@@ -18,7 +18,7 @@ client.on('message', async message => {
       .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
       .addField(':newspaper: INFO', '7 Commands open \n``help info``')
-      .addField(':tada: FUN', '3 Commands open \n``help fun``')
+      .addField(':tada: FUN', '2 Commands open \n``help fun``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
@@ -104,7 +104,7 @@ client.on('message', async message => {
     return message.channel.send(userinfoembed);
    }
    
-   if (message.content === prefix + 'host') {
+    if (message.content === prefix + 'host') {
       let hostembed = new Discord.RichEmbed()
       .setTitle('Check Our New Host')
       .setDescription('Click This [Link](https://discord.gg/r9fYKEA) to Join our new Host and Host your Own Bot!!')
@@ -126,7 +126,7 @@ client.on('message', async message => {
      return message.channel.send(avatarembed);
    }
   
-  if (message.content === prefix + 'gayrate'){
+    if (message.content === prefix + 'gayrate'){
       let user = message.mentions.users.first() || message.author;
       let gayembed = new Discord.RichEmbed()
       .setAuthor(`${user.username}`)
@@ -136,9 +136,5 @@ client.on('message', async message => {
       return message.channel.send(gayembed)
    }
    
-client.on('message', message => {
-    if (message.content === 'ping') {
-       message.reply('pong');
-    }
 });
 client.login(process.env.BOT_TOKEN);
