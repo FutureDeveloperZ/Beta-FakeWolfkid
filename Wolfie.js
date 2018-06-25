@@ -18,7 +18,7 @@ client.on('message', async message => {
       .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
       .addField(':newspaper: INFO', '7 Commands open \n``help info``')
-      .addField(':tada: FUN', '2 Commands open \n``help fun``')
+      .addField(':tada: FUN', '3 Commands open \n``help fun``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
@@ -36,7 +36,7 @@ client.on('message', async message => {
     if (message.content === prefix + 'help fun') {
       let helpfunembed = new Discord.RichEmbed()
       .setTitle('Fun Comamnds | prefix b; | Fun list')
-      .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ``')
+      .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ping``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help fun`)
       return message.channel.send(helpfunembed);
@@ -58,6 +58,7 @@ client.on('message', async message => {
       .setThumbnail(client.user.avatarURL)
       .addField('Bot Created', client.user.createdAt)
       .addField('Bot Username', client.user.username)
+      .addField('Users', client.user.size)
       .addField('Host We Use', 'Heroku')
       .addField('Bot Code', 'JavaScript')
       .addField('Librarys', ' discord.js')
@@ -133,6 +134,11 @@ client.on('message', async message => {
      .setColor('RANDOM')
      .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)
       return message.channel.send(gayembed)
-     }
+   }
+   
+client.on('message', message => {
+    if (message.content === 'ping') {
+       message.reply('pong');
+    }
 });
 client.login(process.env.BOT_TOKEN);
