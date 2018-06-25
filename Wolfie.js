@@ -18,7 +18,7 @@ client.on('message', async message => {
       .setTitle('List Of Commands | prefix b; | Help List ')
       .setDescription('There is available commands for this bot on list!')
       .addField(':newspaper: INFO', '7 Commands open \n``help info``')
-      .addField(':tada: FUN', '1 Commands open \n``help fun``')
+      .addField(':tada: FUN', '2 Commands open \n``help fun``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help list`)
       return message.channel.send(helpembed);
@@ -36,7 +36,7 @@ client.on('message', async message => {
     if (message.content === prefix + 'help fun') {
       let helpfunembed = new Discord.RichEmbed()
       .setTitle('Fun Comamnds | prefix b; | Fun list')
-      .setDescription('There is available commands for FUN!\n ``avatar,``')
+      .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ``')
       .setColor('RANDOM')
       .setFooter(`Requested by ${message.author.tag} | Help fun`)
       return message.channel.send(helpfunembed);
@@ -115,13 +115,24 @@ client.on('message', async message => {
     //Added This To Seperate Commands and stuff -- This Section is for Fun cmd
     
    if (message.content === prefix + 'avatar') {
+     let user = message.mentions.users.first() || message.author;
      let avatarembed = new Discord.RichEmbed()
      .setTitle('Your Avatar!')
+     .setAuthor(`${user.username}`)
      .setColor('RANDOM')
      .setImage(message.author.avatarURL) 
      .setFooter(`Requested by ${message.author.tag}`)
      return message.channel.send(avatarembed);
    }
   
+  if (message.content === prefix + 'gayrate'){
+      let user = message.mentions.users.first() || message.author;
+      let gayembed = new Discord.RichEmbed()
+      .setAuthor(`${user.username}`)
+      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 100)}% Gay**! :gay_pride_flag:`)
+     .setColor('RANDOM')
+     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)
+      return message.channel.send(gayembed)
+     }
 });
 client.login(process.env.BOT_TOKEN);
