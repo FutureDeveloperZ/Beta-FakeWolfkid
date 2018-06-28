@@ -46,7 +46,7 @@ bot.login(process.env.BOT_TOKEN);
 
 //Events.
 
-client.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", member => {
 
   let welcomechannel = member.guild.channels.find(`name`,`welcome-logs`);
   if(!welcomechannel) return member.guild.createChannel(`welcome-logs`,"text");
