@@ -5,6 +5,7 @@ const Discord = require('discord.js');const client = new Discord.Client();cons
      message.delete();
      message.channel.send(text);
    }
+   
    //MODS COMMANDS YOU DUMMY ONLY HERE OK
    
   if (message.content === prefix + 'addrole') {
@@ -26,5 +27,13 @@ const Discord = require('discord.js');const client = new Discord.Client();cons
   }catch(e){
     rmember.send(`Your role has been set to ${grole.name}`)
   }
-}
+
+
+   if(message.command === "!kick") {
+      let member = message.mentions.members.first();
+      let reason = args.slice(1).join(" ");
+      member.kick(reason);
+   }
+
+  }
    });client.login(process.env.BOT_TOKEN);
