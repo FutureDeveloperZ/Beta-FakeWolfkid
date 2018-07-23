@@ -92,41 +92,5 @@ var S = require('string');
          
          
          
-        If (message.content === prefix + 'eval') {
-        if (message.author.id == config.ownerid) {
-          try {
-            var estart = process.hrtime();
-            var evaled = eval(args.join(' '));
-            var eend = process.hrtime(estart);
-            var tm = '*Executed in ' + (eend[0] * 1000 + eend[1] / 1000000) + ' ms.*\n';
-            if (typeof evaled === 'object') {
-              var mtd = message.channel.send(sendLong(tm + "\`\`\`\n" + util.inspect(evaled).replace(config.discordtoken, '<TOKEN HAS BEEN HIDDEN>') + "\n\`\`\`", 1992, 2000));
-            } else if (typeof evaled === "undefined") {
-              var mtd = message.channel.send(tm + "\`\`\`\n" + typeof undefined + "\n\`\`\`");
-            } else if (evaled == null) {
-              var mtd = message.channel.send(tm + "\`\`\`\n" + null + "\n\`\`\`");
-            } else {
-              var mtd = message.channel.send(sendLong(tm + "\`\`\`\n" + evaled.toString().replace(config.discordtoken, '<TOKEN HAS BEEN HIDDEN>') + "\n\`\`\`", 1992, 2000));
-            }
-            mtd.then(function(msg) {
-              if (typeof evaled !== 'undefined') {
-                if (typeof evaled.then == 'function') {
-                  msg.delete(10000);
-                }
-              }
-            });
-          } catch (err) {
-            if (err !== null && typeof err === 'object') {
-              err = util.inspect(err);
-            }
-            message.channel.send(":x: Error!\n\`\`\`\n" + err.replace(config.discordtoken, '<TOKEN HAS BEEN HIDDEN>') + "\n\`\`\`").then(function(msg) {
-              msg.delete(10000);
-            });
-          }
-        } else {
-          message.reply("You ain't doing that!");
-        }
-        break;
-  
   }
    });client.login(process.env.BOT_TOKEN);
