@@ -92,5 +92,4 @@ var S = require('string');
          
          
          
-  }
    });client.login(process.env.BOT_TOKEN);
