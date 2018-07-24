@@ -37,7 +37,7 @@ var S = require('string');
         var status = new Discord.RichEmbed()
           .setColor(Math.floor(Math.random() * 16777215))
           .setTitle('FakeWolfkidBOT | Information')
-          .setDescription('This was originally made for ImpladeMinecraft. It is open source Discord bot written in Node.js!')
+          .setDescription('This is FakeWolfkid Created by Wolfkid ')
           .setThumbnail(client.user.avatarURL)
           .addField('Version', '1.7-Unstable')
           .addField('=====', '×××××')
@@ -45,7 +45,29 @@ var S = require('string');
           .addField('Created', client.user.createdAt)
           .addField('=====', '×××××')
           .addField('**Stats**', stats)
-          return message.channel.send(status);    }       if (message.content === prefix + 'changelog') {      let changelogembed = new Discord.RichEmbed()      .setTitle('Changelog')      .setDescription('Check out Whats New on The Bot :D')      .addField('July 23', 'Added New Features')      .setColor('#808000')      .setFooter(`Requested by ${message.author.tag}`)      return message.channel.send(changelogembed);    }        if (message.content === prefix + 'dcinvite') {      let dcinviteembed = new Discord.RichEmbed()      .setTitle('Our support Discord server')      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')      .setColor('DARK')      return message.channel.send(dcinviteembed);    }       if (message.content === prefix + 'userinfo') {     let userinfoembed = new Discord.RichEmbed()     .setTitle(`${message.author.tag} User Info`)     .setColor('RANDOM')     .setThumbnail(client.user.avatarURL)     .addField('Your ID', message.author.id, true)     .addField('You Join at', message.member.joinedAt.toDateString(), true)     .addField('Are you a Bot?', message.member.user.bot ? 'Yes' : 'No', true)     .setFooter(`Requested by ${message.author.tag}`)    return message.channel.send(userinfoembed);   }       
+          return message.channel.send(status);        }       if (message.content === prefix + 'changelog') {      let changelogembed = new Discord.RichEmbed()      .setTitle('Changelog')      .setDescription('Check out Whats New on The Bot :D')      .addField('July 23', 'Added New Features')      .setColor('#808000')      .setFooter(`Requested by ${message.author.tag}`)      return message.channel.send(changelogembed);    }        if (message.content === prefix + 'dcinvite') {      let dcinviteembed = new Discord.RichEmbed()      .setTitle('Our support Discord server')      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')      .setColor('DARK')      return message.channel.send(dcinviteembed);    }       if (message.content === prefix + 'userinfo') {     let userinfoembed = new Discord.RichEmbed()       var m = member.user;
+  var rls = member.roles.map((r) => r.name).join(', ');
+  var uemb = new extras.UnrealEmbed()
+    .addField('Username', m.username)
+    .addField('ID', m.id)
+    .addField('Discord Tag', m.tag)
+    .addField('Avatar URL', m.displayAvatarURL)
+    .addField('Created at', m.createdAt)
+    .addField('Bot?', m.bot)
+    .addField('Roles', '\\' + rls);
+  if (m.presence.game != null) {
+    uemb.addField('Game', m.presence.game.name);
+  } else {
+    uemb.addField('Game', 'None');
+  }
+  uemb.addField('Status', m.presence.status);
+  if (m.lastMessage != null && mtn == true) {
+    uemb.addField('Last Message', m.lastMessage.cleanContent);
+  } else if (mtn == true) {
+    uemb.addField('Last Message', 'Not found');
+  }
+  return extras.embed('Information about the user ' + m.username + ':', uemb.toString(), m.displayAvatarURL);
+}         
     
     
     
