@@ -208,7 +208,7 @@ client.on('message', async message => {
     .setAuthor(`${user.username}`)
     .addField(config.eightball[rnd])
     .setColor('RANDOM')
-    return message.channel.send.(ballembed)
+    return message.channel.send(ballembed)
    }
    
    
