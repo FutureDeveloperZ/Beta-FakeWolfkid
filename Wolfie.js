@@ -89,12 +89,12 @@ var S = require('string');
    
   if (message.content === prefix + '8ball') {
       let user = message.mentions.users.first() || message.author;
-      let 8ballembed = new Discord.RichEmbed()
+      let ballembed = new Discord.RichEmbed()
         var rnd = Math.floor(Math.random() * config.eightball.length);
         .setAuthor(`${user.username}`)
         .addField(config.eightball[rnd])
         .setColor('RANDOM')
-        return message.channel.send.(8ballembed)
+        return message.channel.send.(ballembed)
    }
    
    
