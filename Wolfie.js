@@ -1,6 +1,6 @@
 const Discord = require('discord.js');const client = new Discord.Client();const config = require('./config.json');
 
-const wolfxtra = require('./wolfaxtra.js');
+const wolfaxtra = require('./wolfaxtra.js');
 var S = require('string');
 client.on('ready', () => {    client.user.setStatus('dnd');    client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});    console.log('Uhhh I\'m ready!');});client.on('message', async message => {    if (message.author.bot) return;    let prefix = config.prefix;    if (message.content === prefix + 'help') {      let helpembed = new Discord.RichEmbed()      .setTitle('List Of Commands | prefix b; | Help List ')      .setDescription('There is available commands for this bot on list!')      .addField(':newspaper: INFO', '7 Commands open \n``help info``')      .addField(':tada: FUN', '2 Commands open \n``help fun``')
       .addField('MOD', '1 Command Open \n``help mod``')
