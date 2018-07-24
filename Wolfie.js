@@ -14,7 +14,7 @@ client.on('ready', () => {
     console.log("#   #  #  #  #  #       #    #  #  #  ####");
     console.log("#   #  #   # #  #       #    #   # #  #");
     console.log(" ###   #     #  ####  #####  #     #  #####");
-    console.log(`Bot name ${bot.user.username}`)
+    console.log(`Bot name ${client.user.username}`)
 });
 
 client.on('message', async message => {
