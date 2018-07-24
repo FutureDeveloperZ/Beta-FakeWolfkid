@@ -201,15 +201,15 @@ client.on('message', async message => {
     message.channel.send(text);
    }
    
-  if (message.content === prefix + '8ball') {
-    let user = message.mentions.users.first() || message.author;
-    var rnd = Math.floor(Math.random() * config.eightball.length);
-    let ballembed = new Discord.RichEmbed()
-    .setAuthor(`${user.username}`)
-    .addField(config.eightball[rnd])
-    .setColor('RANDOM')
-    return message.channel.send(ballembed)
-   }
+//   if (message.content === prefix + '8ball') {
+//     let user = message.mentions.users.first() || message.author;
+//     var rnd = Math.floor(Math.random() * config.eightball.length);
+//     let ballembed = new Discord.RichEmbed()
+//     .setAuthor(`${user.username}`)
+//     .addField(config.eightball[rnd])
+//     .setColor('RANDOM')
+//     return message.channel.send(ballembed)
+//    }
    
    
    
