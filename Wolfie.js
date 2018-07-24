@@ -40,21 +40,22 @@ var S = require('string');
           .setDescription('This is FakeWolfkid Created by Wolfkid ')
           .setThumbnail(client.user.avatarURL)
           .addField('Version', '1.7-Unstable')
-          .addField('=====', '×××××')
+          .addField('<><><>', '×•×•×')
           .addField('Owner', 'Wolfie#7213')
           .addField('Created', client.user.createdAt)
-          .addField('=====', '×××××')
+          .addField('<><><>', '•×•×•')
           .addField('**Stats**', stats)
-          return message.channel.send(status);        }       if (message.content === prefix + 'changelog') {      let changelogembed = new Discord.RichEmbed()      .setTitle('Changelog')      .setDescription('Check out Whats New on The Bot :D')      .addField('July 23', 'Added New Features')      .setColor('#808000')      .setFooter(`Requested by ${message.author.tag}`)      return message.channel.send(changelogembed);    }        if (message.content === prefix + 'dcinvite') {      let dcinviteembed = new Discord.RichEmbed()      .setTitle('Our support Discord server')      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')      .setColor('DARK')      return message.channel.send(dcinviteembed);    }       if (message.content === prefix + 'userinfo') {     let userinfoembed = new Discord.RichEmbed()       var m = member.user;
-  var rls = member.roles.map((r) => r.name).join(', ');
-  var uemb = new extras.UnrealEmbed()
-    .addField('Username', m.username)
-    .addField('ID', m.id)
-    .addField('Discord Tag', m.tag)
-    .addField('Avatar URL', m.displayAvatarURL)
-    .addField('Created at', m.createdAt)
-    .addField('Bot?', m.bot)
-    .addField('Roles', '\\' + rls);
+          return message.channel.send(status);        }       if (message.content === prefix + 'changelog') {      let changelogembed = new Discord.RichEmbed()      .setTitle('Changelog')      .setDescription('Check out Whats New on The Bot :D')      .addField('July 23', 'Added New Features')      .setColor('#808000')      .setFooter(`Requested by ${message.author.tag}`)      return message.channel.send(changelogembed);    }        if (message.content === prefix + 'dcinvite') {      let dcinviteembed = new Discord.RichEmbed()      .setTitle('Our support Discord server')      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')      .setColor('DARK')      return message.channel.send(dcinviteembed);    }       if (message.content === prefix + 'userinfo') {
+   if (member, mtn = true) {     let userinfoembed = new Discord.RichEmbed()       var m = member.user;
+       var rls = member.roles.map((r) => r.name).join(', ');
+       var uemb = new extras.UnrealEmbed()
+          .addField('Username', m.username)
+          .addField('ID', m.id)
+          .addField('Discord Tag', m.tag)
+          .addField('Avatar URL', m.displayAvatarURL)
+          .addField('Created at', m.createdAt)
+          .addField('Bot?', m.bot)
+          .addField('Roles', '\\' + rls);
   if (m.presence.game != null) {
     uemb.addField('Game', m.presence.game.name);
   } else {
@@ -79,7 +80,7 @@ var S = require('string');
    
    
    
-      if (message.content === prefix + 'avatar') {     let user = message.mentions.users.first() || message.author;     let avatarembed = new Discord.RichEmbed()     .setTitle('Your Avatar!')     .setAuthor(`${user.username}`)     .setColor('RANDOM')     .setImage(message.author.avatarURL)      .setFooter(`Requested by ${message.author.tag}`)     return message.channel.send(avatarembed);   }      if (message.content === prefix + 'gayrate'){      let user = message.mentions.users.first() || message.author;      let gayembed = new Discord.RichEmbed()      .setAuthor(`${user.username}`)      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 100)}% Gay**! :gay_pride_flag:`)     .setColor('RANDOM')     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)      return message.channel.send(gayembed)   }   
+      if (message.content === prefix + 'avatar') {     let user = message.mentions.users.first() || message.author;     let avatarembed = new Discord.RichEmbed()     .setTitle('Your Avatar!')     .setAuthor(`${user.username}`)     .setColor('RANDOM')     .setImage(message.author.avatarURL)      .setFooter(`Requested by ${message.author.tag}`)     return message.channel.send(avatarembed);   }      if (message.content === prefix + 'gayrate'){      let user = message.mentions.users.first() || message.author;      let gayembed = new Discord.RichEmbed()      .setAuthor(`${user.username}`)      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 101)}% Gay**! :gay_pride_flag:`)     .setColor('RANDOM')     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)      return message.channel.send(gayembed)   }   
   if(message.content === prefix + 'say') {
      let text = args.slice(1).join(" ");
      message.delete();
@@ -87,8 +88,13 @@ var S = require('string');
    }
    
   if (message.content === prefix + '8ball') {
+      let user = message.mentions.users.first() || message.author;
+      let 8ballembed = new Discord.RichEmbed()
         var rnd = Math.floor(Math.random() * config.eightball.length);
-        message.reply(config.eightball[rnd]);
+        .setAuthor(`${user.username}`)
+        .addField(config.eightball[rnd])
+        .setColor('RANDOM')
+        return message.channel.send.(8ballembed)
    }
    
    
@@ -98,9 +104,9 @@ var S = require('string');
    
    
    
-   if(message.content === prefix + 'kick') {
-      let member = message.mentions.members.first();
-      let reason = args.slice(1).join(" ");
+   if (message.content === prefix + 'kick') {
+       let member = message.mentions.members.first();
+       let reason = args.slice(1).join(" ");
       member.kick(reason);
    }
         
