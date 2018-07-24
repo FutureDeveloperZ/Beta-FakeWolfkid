@@ -81,20 +81,20 @@ var S = require('string');
    
    
       if (message.content === prefix + 'avatar') {     let user = message.mentions.users.first() || message.author;     let avatarembed = new Discord.RichEmbed()     .setTitle('Your Avatar!')     .setAuthor(`${user.username}`)     .setColor('RANDOM')     .setImage(message.author.avatarURL)      .setFooter(`Requested by ${message.author.tag}`)     return message.channel.send(avatarembed);   }      if (message.content === prefix + 'gayrate'){      let user = message.mentions.users.first() || message.author;      let gayembed = new Discord.RichEmbed()      .setAuthor(`${user.username}`)      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 101)}% Gay**! :gay_pride_flag:`)     .setColor('RANDOM')     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)      return message.channel.send(gayembed)   }   
-  if(message.content === prefix + 'say') {
-     let text = args.slice(1).join(" ");
-     message.delete();
-     message.channel.send(text);
+  if (message.content === prefix + 'say') {
+    let text = args.slice(1).join(" ");
+    message.delete();
+    message.channel.send(text);
    }
    
   if (message.content === prefix + '8ball') {
-      let user = message.mentions.users.first() || message.author;
-      let ballembed = new Discord.RichEmbed()
-        var rnd = Math.floor(Math.random() * config.eightball.length);
-        .setAuthor(`${user.username}`)
-        .addField(config.eightball[rnd])
-        .setColor('RANDOM')
-        return message.channel.send.(ballembed)
+    let user = message.mentions.users.first() || message.author;
+    let ballembed = new Discord.RichEmbed()
+    var rnd = Math.floor(Math.random() * config.eightball.length);
+    .setAuthor(`${user.username}`)
+    .addField(config.eightball[rnd])
+    .setColor('RANDOM')
+    return message.channel.send.(ballembed)
    }
    
    
