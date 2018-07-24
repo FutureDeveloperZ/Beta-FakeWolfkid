@@ -9,7 +9,12 @@ var S = require('string');
 client.on('ready', () => {
     client.user.setStatus('dnd');
     client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});
-    console.log('Uhhh I\'m ready!');
+    console.log(" ###   #     #  #     #####  #     #  #####");
+    console.log("#   #  # #   #  #       #    # #   #  #");
+    console.log("#   #  #  #  #  #       #    #  #  #  ####");
+    console.log("#   #  #   # #  #       #    #   # #  #");
+    console.log(" ###   #     #  ####  #####  #     #  #####");
+    console.log(`Bot name ${bot.user.username}`)
 });
 
 client.on('message', async message => {
