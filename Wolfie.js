@@ -1,15 +1,72 @@
-const Discord = require('discord.js');const client = new Discord.Client();const config = require('./config.json');
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const config = require('./config.json');
 
 const wolfaxtra = require('./wolfaxtra.js');
 var S = require('string');
-client.on('ready', () => {    client.user.setStatus('dnd');    client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});    console.log('Uhhh I\'m ready!');});client.on('message', async message => {    if (message.author.bot) return;    let prefix = config.prefix;    if (message.content === prefix + 'help') {      let helpembed = new Discord.RichEmbed()      .setTitle('List Of Commands | prefix b; | Help List ')      .setDescription('There is available commands for this bot on list!')      .addField(':newspaper: INFO', '7 Commands open \n``help info``')      .addField(':tada: FUN', '2 Commands open \n``help fun``')
+
+
+client.on('ready', () => {
+    client.user.setStatus('dnd');
+    client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});
+    console.log('Uhhh I\'m ready!');
+});
+
+client.on('message', async message => {
+    if (message.author.bot) return;
+    let prefix = config.prefix;
+
+
+    if (message.content === prefix + 'help') {
+      let helpembed = new Discord.RichEmbed()
+      .setTitle('List Of Commands | prefix b; | Help List ')
+      .setDescription('There is available commands for this bot on list!')
+      .addField(':newspaper: INFO', '7 Commands open \n``help info``')
+      .addField(':tada: FUN', '2 Commands open \n``help fun``')
       .addField('MOD', '1 Command Open \n``help mod``')
-      .addField('OWNER', '1 Command Open \n``help owner``')      .setColor('RANDOM')      .setFooter(`Requested by ${message.author.tag} | Help list`)      return message.channel.send(helpembed);    }  
-    if (message.content === prefix + 'help info') {      let helpeinfombed = new Discord.RichEmbed()      .setTitle('Info commands | prefix b; | Info page ')      .setDescription('There is available commands for this Info \n``botinfo, changelog, dcinvite, media, userinfo``')      .setColor('RANDOM')      .setFooter(`Requested by ${message.author.tag} | Help info`)      return message.channel.send(helpinfoembed);    }
+      .addField('OWNER', '1 Command Open \n``help owner``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help list`)
+      return message.channel.send(helpembed);
+    }
   
-    if (message.content === prefix + 'help owner') {      let helpeinfombed = new Discord.RichEmbed()      .setTitle('Owner commands | prefix b; | Owner page ')      .setDescription('There is available commands for this Info \n``eval``')      .setColor('RANDOM')      .setFooter(`Requested by ${message.author.tag} | Help info`)      return message.channel.send(helpeownerembed);    }
+    if (message.content === prefix + 'help info') {
+      let helpeinfombed = new Discord.RichEmbed()
+      .setTitle('Info commands | prefix b; | Info page ')
+      .setDescription('There is available commands for this Info \n``botinfo, changelog, dcinvite, media, userinfo``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help info`)
+      return message.channel.send(helpinfoembed);
+    }
+  
+    if (message.content === prefix + 'help owner') {
+      let helpeinfombed = new Discord.RichEmbed()
+      .setTitle('Owner commands | prefix b; | Owner page ')
+      .setDescription('There is available commands for this Info \n``eval``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help info`)
+      return message.channel.send(helpeownerembed);
+    }
       
-        if (message.content === prefix + 'help mod') {      let helpeinfombed = new Discord.RichEmbed()      .setTitle('Mods commands | prefix b; | Mod page ')      .setDescription('There is available commands for this Info \n``kick``')      .setColor('RANDOM')      .setFooter(`Requested by ${message.author.tag} | Help info`)      return message.channel.send(helpmodembed);    }          if (message.content === prefix + 'help fun') {      let helpfunembed = new Discord.RichEmbed()      .setTitle('Fun Comamnds | prefix b; | Fun list')      .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ping``')      .setColor('RANDOM')      .setFooter(`Requested by ${message.author.tag} | Help fun`)      return message.channel.send(helpfunembed);    }    
+    
+    if (message.content === prefix + 'help mod') {
+      let helpeinfombed = new Discord.RichEmbed()
+      .setTitle('Mods commands | prefix b; | Mod page ')
+      .setDescription('There is available commands for this Info \n``kick``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help info`)
+      return message.channel.send(helpmodembed);
+    }
+      
+    if (message.content === prefix + 'help fun') {
+      let helpfunembed = new Discord.RichEmbed()
+      .setTitle('Fun Comamnds | prefix b; | Fun list')
+      .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ping``')
+      .setColor('RANDOM')
+      .setFooter(`Requested by ${message.author.tag} | Help fun`)
+      return message.channel.send(helpfunembed);
+    }
+    
     
     
     
@@ -18,7 +75,16 @@ var S = require('string');
     
     
     
-        if (message.content === prefix + 'media') {      let mediaembed = new Discord.RichEmbed()      .setTitle('Check Wolfie Social Media')      .setDescription('Check Wolfie [Youtube Channel ](https://www.youtube.com/c/Wolfkid).\n Check Wolfie [Twitter](https://twitter.com/TheRealWolfkid).\n Check Wolfie [Fan Discord Server](http://bit.ly/WolfkidDiscord).\nAnd Also Check Wolfie [Github](https://github.com/Wolfkid200444)')      .setColor('RANDOM')      return message.channel.send(mediaembed);    }       if (message.content === prefix + 'botinfo') {
+    
+    if (message.content === prefix + 'media') {
+      let mediaembed = new Discord.RichEmbed()
+      .setTitle('Check Wolfie Social Media')
+      .setDescription('Check Wolfie [Youtube Channel ](https://www.youtube.com/c/Wolfkid).\n Check Wolfie [Twitter](https://twitter.com/TheRealWolfkid).\n Check Wolfie [Fan Discord Server](http://bit.ly/WolfkidDiscord).\nAnd Also Check Wolfie [Github](https://github.com/Wolfkid200444)')
+      .setColor('RANDOM')
+      return message.channel.send(mediaembed);
+    }
+    
+   if (message.content === prefix + 'botinfo') {
       var seconds = process.uptime();
         days = Math.floor(seconds / 86400);
         seconds %= 86400;
@@ -45,8 +111,31 @@ var S = require('string');
           .addField('Created', client.user.createdAt)
           .addField('<><><>', '•×•×•')
           .addField('**Stats**', stats)
-          return message.channel.send(status);        }       if (message.content === prefix + 'changelog') {      let changelogembed = new Discord.RichEmbed()      .setTitle('Changelog')      .setDescription('Check out Whats New on The Bot :D')      .addField('July 23', 'Added New Features')      .setColor('#808000')      .setFooter(`Requested by ${message.author.tag}`)      return message.channel.send(changelogembed);    }        if (message.content === prefix + 'dcinvite') {      let dcinviteembed = new Discord.RichEmbed()      .setTitle('Our support Discord server')      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')      .setColor('DARK')      return message.channel.send(dcinviteembed);    }       if (message.content === prefix + 'userinfo') {
-   if (member, mtn = true) {     let userinfoembed = new Discord.RichEmbed()       var m = member.user;
+          return message.channel.send(status);
+        }
+   
+    if (message.content === prefix + 'changelog') {
+      let changelogembed = new Discord.RichEmbed()
+      .setTitle('Changelog')
+      .setDescription('Check out Whats New on The Bot :D')
+      .addField('July 23', 'Added New Features')
+      .setColor('#808000')
+      .setFooter(`Requested by ${message.author.tag}`)
+      return message.channel.send(changelogembed);
+    }
+    
+    if (message.content === prefix + 'dcinvite') {
+      let dcinviteembed = new Discord.RichEmbed()
+      .setTitle('Our support Discord server')
+      .setDescription('Check out our [Discord server](http://bit.ly/FutureDevs) to get news of FakeWolfkid and if you have issues with the bot or not working property you can report it on #report or on our GitHub')
+      .setColor('DARK')
+      return message.channel.send(dcinviteembed);
+    }
+    
+   if (message.content === prefix + 'userinfo') {
+   if (member, mtn = true) {
+     let userinfoembed = new Discord.RichEmbed()
+       var m = member.user;
        var rls = member.roles.map((r) => r.name).join(', ');
        var uemb = new extras.UnrealEmbed()
           .addField('Username', m.username)
@@ -68,19 +157,44 @@ var S = require('string');
     uemb.addField('Last Message', 'Not found');
   }
   return extras.embed('Information about the user ' + m.username + ':', uemb.toString(), m.displayAvatarURL);
-}         
+}
+     
     
     
     
     
     
-        //Added This To Seperate Commands and stuff -- This Section is for Fun cmd    
+    
+    
+    //Added This To Seperate Commands and stuff -- This Section is for Fun cmd
+    
    
    
    
    
    
-      if (message.content === prefix + 'avatar') {     let user = message.mentions.users.first() || message.author;     let avatarembed = new Discord.RichEmbed()     .setTitle('Your Avatar!')     .setAuthor(`${user.username}`)     .setColor('RANDOM')     .setImage(message.author.avatarURL)      .setFooter(`Requested by ${message.author.tag}`)     return message.channel.send(avatarembed);   }      if (message.content === prefix + 'gayrate'){      let user = message.mentions.users.first() || message.author;      let gayembed = new Discord.RichEmbed()      .setAuthor(`${user.username}`)      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 101)}% Gay**! :gay_pride_flag:`)     .setColor('RANDOM')     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)      return message.channel.send(gayembed)   }   
+   
+   if (message.content === prefix + 'avatar') {
+     let user = message.mentions.users.first() || message.author;
+     let avatarembed = new Discord.RichEmbed()
+     .setTitle('Your Avatar!')
+     .setAuthor(`${user.username}`)
+     .setColor('RANDOM')
+     .setImage(message.author.avatarURL) 
+     .setFooter(`Requested by ${message.author.tag}`)
+     return message.channel.send(avatarembed);
+   }
+  
+    if (message.content === prefix + 'gayrate'){
+      let user = message.mentions.users.first() || message.author;
+      let gayembed = new Discord.RichEmbed()
+      .setAuthor(`${user.username}`)
+      .addField(`Gay Rate`, `You Are **${Math.floor(Math.random() * 101)}% Gay**! :gay_pride_flag:`)
+     .setColor('RANDOM')
+     .setFooter(`AH! GAYYYYYY | Requested by ${message.author.tag}`)
+      return message.channel.send(gayembed)
+   }
+   
   if (message.content === prefix + 'say') {
     let text = args.slice(1).join(" ");
     message.delete();
@@ -89,8 +203,8 @@ var S = require('string');
    
   if (message.content === prefix + '8ball') {
     let user = message.mentions.users.first() || message.author;
-    let ballembed = new Discord.RichEmbed()
     var rnd = Math.floor(Math.random() * config.eightball.length);
+    let ballembed = new Discord.RichEmbed()
     .setAuthor(`${user.username}`)
     .addField(config.eightball[rnd])
     .setColor('RANDOM')
@@ -123,4 +237,6 @@ var S = require('string');
          
          
          
-   });client.login(process.env.BOT_TOKEN);
+   
+});
+client.login(process.env.BOT_TOKEN);
