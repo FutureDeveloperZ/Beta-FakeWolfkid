@@ -231,7 +231,7 @@ const command = args.shift().toLowerCase();
        let member = message.mentions.members.first();
        let reason = args.slice(1).join(" ");
       member.kick(reason);
-   }
+    }
         
         
         
@@ -247,5 +247,5 @@ const command = args.shift().toLowerCase();
          
          
    
-});
+ });
 client.login(process.env.BOT_TOKEN);
