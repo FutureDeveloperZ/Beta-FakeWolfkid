@@ -18,8 +18,11 @@ client.on('ready', () => {
 });
 
 client.on('message', async message => {
-    if (message.author.bot) return;
-    let prefix = config.prefix;
+if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+const args = message.content.slice(prefix.length).split(' ');
+
+const command = args.shift().toLowerCase();
 
 
     if (message.content === prefix + 'help') {
@@ -63,7 +66,8 @@ client.on('message', async message => {
       return message.channel.send(helpmodembed);
     }
       
-    if (message.content === prefix + 'help fun') {
+    if (comamnd==='help') {
+    if (args[0]==='fun') {
       let helpfunembed = new Discord.RichEmbed()
       .setTitle('Fun Comamnds | prefix b; | Fun list')
       .setDescription('There is available commands for FUN!\n ``avatar, gayrate, ping``')
