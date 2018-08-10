@@ -8,7 +8,7 @@ var S = require('string');
 
 client.on('ready', () => {
     client.user.setStatus('dnd');
-    client.user.setActivity('My Self | --> b; <--', {type: 'WATCHING'});
+    client.user.setActivity('With New Code | --> b; <--', {type: 'WATCHING'});
     console.log(" ###   #     #  #     #####  #     #  #####");
     console.log("#   #  # #   #  #       #    # #   #  #");
     console.log("#   #  #  #  #  #       #    #  #  #  ####");
