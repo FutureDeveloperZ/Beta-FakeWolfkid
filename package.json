@@ -10,7 +10,7 @@
     "forever": "^0.15.3",
     "imgur": "^0.2.1",
     "remove-markdown": "^0.3.0",
-    "request": "^2.83.0",
+    "request": "^2.88.0",
     "string": "^3.3.3",
     "uws": "^99.0.0",
     "xml2js": "^0.4.19",
